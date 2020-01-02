@@ -1,0 +1,7 @@
+[
+    {"bot_keyword": "weapon", "name": "Wooden Sword", "bot_text": "`Attack:` **6**\nA simple wooden sword."},
+    {"bot_keyword": "weapon", "name": "Iron-Sword", "bot_text":  "`Attack:` **10**\nA basic iron sword."},
+    {"bot_keyword": "weapon", "name":  "Iron Axe", "bot_text":  "`Attack:` **14**\nA basic iron axe."},
+    {"bot_keyword": "item", "name": "Potion", "bot_text": "Heals **10** HP." },
+    {"bot_keyword": "item", "name": "Mega Potion", "bot_text":  "Heals **40** HP."}
+]
