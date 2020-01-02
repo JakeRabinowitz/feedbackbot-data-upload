@@ -13,7 +13,7 @@ In order to use the script you will need to have the requests library installed,
 `pip install requests`
 
 
-To upload the included "game_data.json" file, run the python script and follow the prompts, entering your own 
+To upload the included "game_data.json" file, run the python script and follow the prompts, entering your own upload URL and auth token.
 
 Example:
 
