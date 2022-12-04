@@ -1,15 +1,19 @@
 import requests
 import json
 
+UPLOAD_URL = "https://www.discordfeedbackbot.com/upload/"
+# You can upload Alpha or Beta data using the "development_stage" query parameter.
+# Alpha: https://www.discordfeedbackbot.com/upload/?development_stage=alpha
+# Beta: https://www.discordfeedbackbot.com/upload/?development_stage=beta
 
-UPLOAD_URL = None  # You can put your upload url here.
 AUTH_TOKEN = None  # You can put your auth token here.
 
-UPLOAD_DATA = None  # You can put your data here.
+# You can put your json string here, or leave it as None to be prompted to upload a json file.
+UPLOAD_DATA_JSON = None
 
 
 def interactive_upload():
-    if UPLOAD_DATA is None:
+    if UPLOAD_DATA_JSON is None:
         filename = input("Please enter the name of the file to upload.\n> ")
         try:
             with open(filename, 'r') as file:
@@ -18,16 +22,10 @@ def interactive_upload():
             print(e)
             return
     else:
-        data = UPLOAD_DATA
+        data = json.loads(UPLOAD_DATA_JSON)
 
     url = UPLOAD_URL if UPLOAD_URL is not None else input("Please enter your upload url.\n> ").strip()
     token = AUTH_TOKEN if AUTH_TOKEN is not None else input("Please enter your auth token.\n> ").strip()
-
-    build_type = input("Please enter the build type you are uploading to [alpha/beta]. Default is normal.\n> ").strip()
-    if build_type.lower() == "alpha":
-        url = f"{url}/alpha"
-    elif build_type.lower() == "beta":
-        url = f"{url}/beta"
 
     headers = {'Content-Type': 'application/json', 'Authorization': f'Bearer {token}'}
     response = requests.put(url, headers=headers, json=data)
