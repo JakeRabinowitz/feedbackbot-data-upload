@@ -24,11 +24,10 @@ def interactive_upload():
     else:
         data = json.loads(UPLOAD_DATA_JSON)
 
-    url = UPLOAD_URL if UPLOAD_URL is not None else input("Please enter your upload url.\n> ").strip()
     token = AUTH_TOKEN if AUTH_TOKEN is not None else input("Please enter your auth token.\n> ").strip()
 
     headers = {'Content-Type': 'application/json', 'Authorization': f'Bearer {token}'}
-    response = requests.put(url, headers=headers, json=data)
+    response = requests.put(UPLOAD_URL, headers=headers, json=data)
     print(f"{response}: {response.text}")
 
 

@@ -1,8 +1,8 @@
 # FeedbackBot Data Upload Example
 
-This is an example game data upload script for [FeedbackBot](https://public-feedbackbot.herokuapp.com/). You can use
+This is an example game data upload script for [FeedbackBot](https://www.discordfeedbackbot.com/). You can use
 this to upload data, or as a guide for your own data uploader implementation. For questions about FeedbackBot, see
-the [documentation page](https://public-feedbackbot.herokuapp.com/docs) or visit the [FeedbackBot Development Discord](https://discord.gg/788XscP).
+the [documentation page](https://www.discordfeedbackbot.com/docs/#Data%20Lookup) or visit the [FeedbackBot Development Discord](https://discord.gg/788XscP).
 
 ## Using this Script.
 
@@ -21,10 +21,6 @@ Example:
 
     Please enter the name of the file to upload.
     > game_data.json
-    Please enter your upload url.
-    > [ENTER YOUR UPLOAD URL]
     Please enter your auth token.
     > [ENTER YOUR AUTH TOKEN]
-    Please enter the build type you are uploading to [alpha/beta]. Default is normal.
-    >
-    <Response [200]>: Upload succeeded
+    <Response [200]>: Successfully uploaded new lookup data.
